@@ -1,0 +1,163 @@
+/* --- ESTILOS DA PÁGINA CONTATO --- */
+
+/* Hero simples */
+.hero-contact {
+    text-align: center;
+    padding: 60px 20px 40px 20px;
+    background: var(--gradiente-hero); /* Usa o mesmo gradiente das outras pags */
+    color: white;
+}
+.hero-contact h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.hero-contact p { font-size: 1.1rem; opacity: 0.9; }
+
+/* Layout em duas colunas */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Coluna do form é um pouco maior */
+    gap: 50px;
+    margin-top: 40px;
+    align-items: start;
+}
+
+/* --- COLUNA DA ESQUERDA (INFO) --- */
+.contact-info h2 {
+    color: var(--cor-titulo);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.contact-info > p {
+    margin-bottom: 30px;
+    color: var(--cor-texto);
+}
+
+/* Cartões de Contato */
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--cor-card);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda);
+    margin-bottom: 20px;
+    text-decoration: none; /* Remove sublinhado de link */
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Efeito Hover nos cartões clicáveis */
+.info-card:not(.no-hover):hover {
+    transform: translateX(10px);
+    border-color: var(--cor-destaque);
+    cursor: pointer;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 212, 255, 0.1); /* Fundo azulzinho transparente */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--cor-destaque);
+}
+
+.info-text h3 {
+    font-size: 1rem;
+    color: var(--cor-titulo);
+    margin-bottom: 2px;
+}
+
+.info-text span {
+    display: block;
+    color: var(--cor-texto);
+    font-weight: 600;
+}
+
+.info-text small {
+    color: var(--cor-destaque);
+    font-size: 0.8rem;
+}
+
+/* --- COLUNA DA DIREITA (FORMULÁRIO) --- */
+.form-box {
+    background-color: var(--cor-card);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.form-box h2 {
+    color: var(--cor-titulo);
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--cor-texto);
+}
+
+/* Inputs bonitos e modernos */
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+    background-color: var(--cor-fundo); /* Fundo do input igual ao fundo da página */
+    color: var(--cor-texto);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+/* Botão de Enviar */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cor-destaque);
+    color: white; /* Texto branco para contraste no azul */
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #009ec2; /* Um azul um pouco mais escuro */
+    transform: translateY(-2px);
+}
+
+/* Responsividade (Celular) */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* Vira uma coluna só */
+    }
+    .hero-contact h1 {
+        font-size: 2rem;
+    }
+}

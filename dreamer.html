@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Tech | Seja um Dreamer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dreamer.css">
+</head>
+<body class="dark-mode">
+
+    <header class="header">
+        <div class="logo">
+            <span>Dream</span>Tech.
+        </div>
+        
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="sobreNos.html">Sobre Nós</a>
+            <a href="acoesSociais.html">Ações Sociais</a>
+            <a href="instituto.html">Instituto</a>
+            <a href="contato.html">Contato</a>
+            <a href="dreamer.html" class="active">Venha Ser Um Dreamer!</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-theme">☀️</button>
+            <a href="#" class="btn-cta">Login Aluno</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-dreamer">
+            <div class="hero-content">
+                <h1>Junte-se ao Movimento</h1>
+                <p>Um "Dreamer" é todo aquele que acredita e constrói o futuro com a gente. Escolha como você quer transformar o mundo.</p>
+            </div>
+        </section>
+
+        <section class="container roles-container">
+            
+            <div class="role-card business">
+                <div class="role-header">
+                    <i class="fa-solid fa-building role-icon"></i>
+                    <h2>Para Empresas</h2>
+                    <p>Invista no futuro e colha inovação.</p>
+                </div>
+                
+                <div class="role-body">
+                    <p>Sua empresa quer fazer parte desse sonho? Ao se tornar uma <strong>Parceira Dream Tech</strong>, você não está apenas ajudando, está investindo no seu próprio ecossistema.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span><strong>Mão de Obra Qualificada:</strong> Acesso prioritário a talentos formados em nossa metodologia (Programação, IA, Dados).</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span><strong>Inovação Exclusiva:</strong> Acesso a novas tecnologias e projetos desenvolvidos dentro do Instituto.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span><strong>Incentivos Fiscais:</strong> Abatimento de impostos através de leis de incentivo à cultura e educação.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span><strong>Selo Empresa Dreamer:</strong> Fortalecimento da sua marca como agente de transformação social.</span>
+                        </li>
+                    </ul>
+
+                    <a href="parceiro.html" class="btn-role btn-business">Quero ser Parceiro</a>
+                </div>
+            </div>
+
+            <div class="role-card individual">
+                <div class="role-header">
+                    <i class="fa-solid fa-user-astronaut role-icon"></i>
+                    <h2>Para Você (Pessoa Física)</h2>
+                    <p>Seja a voz e o braço do nosso sonho.</p>
+                </div>
+                
+                <div class="role-body">
+                    <p>Você mora perto? Acredita na tecnologia? Precisamos de <strong>Apoiadores Locais</strong> para fazer esse sonho chegar em cada esquina.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fa-solid fa-bullhorn"></i>
+                            <span><strong>Divulgação:</strong> Leve a palavra da Dream Tech para escolas, igrejas e associações do seu bairro.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                            <span><strong>Voluntariado em Campanhas:</strong> Ajude na organização das nossas ações sociais e eventos.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-eye"></i>
+                            <span><strong>Fique de Olho:</strong> Os voluntários mais engajados são os primeiros a serem selecionados para vagas na nossa equipe!</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-id-badge"></i>
+                            <span><strong>Carreira Dreamer:</strong> Oportunidade real de vir trabalhar conosco no futuro.</span>
+                        </li>
+                    </ul>
+
+                    <a href="voluntario.html" target="_blank" class="btn-role btn-individual">Quero ser Voluntário</a>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="join-form-section">
+            <div class="container">
+                <h2>Cadastre-se no Banco de Talentos</h2>
+                <p>Deixe seu contato e marque se você é Empresa ou Voluntário.</p>
+                
+                <form class="simple-form" onsubmit="event.preventDefault(); alert('Cadastro realizado! Entraremos em contato.');">
+                    <input type="text" placeholder="Seu Nome ou Razão Social" required>
+                    <input type="email" placeholder="Seu Melhor E-mail" required>
+                    <input type="tel" placeholder="WhatsApp" required>
+                    
+                    <select>
+                        <option value="" disabled selected>Como quer ajudar?</option>
+                        <option value="empresa">Sou Empresa (Parceria)</option>
+                        <option value="voluntario">Sou Pessoa Física (Voluntário)</option>
+                    </select>
+
+                    <button type="submit">Enviar Cadastro</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Iniciativa Dream Tech. Todos os direitos reservados.</p>
+        <div class="footer-social">
+            <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/5521999614345" target="_blank" class="social-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script src="JS/index.js"></script>
+</body>
+</html>

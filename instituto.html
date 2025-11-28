@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Tech | O Instituto</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/instituto.css">
+</head>
+<body class="dark-mode">
+
+    <header class="header">
+        <div class="logo">
+            <span>Dream</span>Tech.
+        </div>
+        
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="sobreNos.html">Sobre Nós</a>
+            <a href="acoesSociais.html">Ações Sociais</a>
+            <a href="instituto.html" class="active">Instituto DreamTech</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-theme">☀️</button>
+            <a href="#" class="btn-cta">Seja um Apoiador</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-institute">
+            <div class="hero-content">
+                <h1>Um Sonho em Construção</h1>
+                <p>Imagine um lugar onde o futuro não é apenas ensinado, mas criado.</p>
+            </div>
+        </section>
+
+        <section class="container dream-section">
+            <div class="dream-grid">
+                
+                <div class="dream-text">
+                    <h2>Nosso Futuro QG Tecnológico</h2>
+                    <p>
+                        O <strong>Instituto Dream Tech</strong> nasceu de um desejo ardente: criar um espaço físico que respire inovação 24 horas por dia. Não queremos apenas uma escola, sonhamos com um <strong>Hub de Tecnologia</strong> próprio.
+                    </p>
+                    <p>
+                        Imagine laboratórios de robótica de ponta, estúdios de realidade virtual, arenas de drones e espaços de coworking gratuitos para jovens da periferia. Um local onde a barreira social é derrubada pela linguagem da programação.
+                    </p>
+                    <p>
+                        Nosso objetivo é transformar vidas através da tecnologia, tirando jovens da ociosidade e transformando-os nos líderes digitais de amanhã.
+                    </p>
+                </div>
+
+                <div class="dream-image-box">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" alt="Projeto do Instituto Dream Tech">
+                    <div class="img-caption">Conceito Artístico da Nova Sede</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="donation-call container">
+            <div class="donation-card">
+                <i class="fa-solid fa-rocket rocket-icon"></i>
+                <h2>Precisamos de Você, Dreamer!</h2>
+                <p class="donation-intro">
+                    Para tirar esse projeto do papel e comprar os tijolos desse sonho, precisamos de pessoas visionárias. Pessoas que, assim como nós, acreditam que a educação tecnológica é a chave da liberdade.
+                </p>
+                <p><strong>Ajude-nos a construir esse legado. Faça sua doação:</strong></p>
+
+                <div class="bank-details">
+                    
+                    <div class="detail-row">
+                        <div class="detail-info">
+                            <span class="label">Chave PIX (E-mail):</span>
+                            <span class="value" id="pixKey">doar@institutodreamtech.com.br</span>
+                        </div>
+                        <button onclick="copiar('pixKey')" class="btn-copy-small"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="detail-row">
+                        <div class="detail-info">
+                            <span class="label">CNPJ (Fictício):</span>
+                            <span class="value" id="cnpjKey">00.123.456/0001-99</span>
+                        </div>
+                        <button onclick="copiar('cnpjKey')" class="btn-copy-small"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+
+                </div>
+                
+                <p id="msg-alert" class="copy-success">Copiado com sucesso! ✅</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Iniciativa Dream Tech. Todos os direitos reservados.</p>
+        <div class="footer-social">
+            <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/5521999614345" target="_blank" class="social-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script src="JS/index.js"></script>
+
+    <script>
+        function copiar(idElemento) {
+            const texto = document.getElementById(idElemento).innerText;
+            navigator.clipboard.writeText(texto).then(() => {
+                const msg = document.getElementById("msg-alert");
+                msg.style.opacity = "1";
+                setTimeout(() => msg.style.opacity = "0", 2000);
+            });
+        }
+    </script>
+</body>
+</html>

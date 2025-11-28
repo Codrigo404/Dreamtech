@@ -1,0 +1,174 @@
+/* --- ESTILOS DO INSTITUTO --- */
+
+/* Hero com imagem de fundo futurista */
+.hero-institute {
+    background: linear-gradient(to bottom, rgba(5,16,36,0.8), var(--cor-fundo)), 
+                url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px 80px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5); /* Brilho neon no texto */
+}
+
+/* Layout Texto + Imagem */
+.dream-section {
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+.dream-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em dois */
+    gap: 50px;
+    align-items: center;
+}
+
+.dream-text h2 {
+    font-size: 2rem;
+    color: var(--cor-titulo);
+    margin-bottom: 25px;
+}
+
+.dream-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--cor-texto);
+    line-height: 1.8;
+}
+
+/* Estilo da Imagem IA */
+.dream-image-box {
+    position: relative;
+}
+
+.dream-image-box img {
+    width: 100%;
+    border-radius: 20px;
+    /* Sombra colorida estilo Cyberpunk */
+    box-shadow: 20px 20px 0px rgba(0, 212, 255, 0.1), 0 0 20px rgba(0,0,0,0.5); 
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s;
+}
+
+.dream-image-box:hover img {
+    transform: scale(1.02);
+}
+
+.img-caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--cor-destaque);
+    font-style: italic;
+}
+
+/* --- CARTÃO DE DOAÇÃO --- */
+.donation-card {
+    background: var(--cor-card);
+    border: 2px solid #FFD700; /* Borda Dourada para destacar */
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.1); /* Brilho dourado suave */
+}
+
+.rocket-icon {
+    font-size: 3rem;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.donation-card h2 {
+    color: var(--cor-titulo);
+    margin-bottom: 20px;
+}
+
+.donation-intro {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Caixa dos Dados Bancários */
+.bank-details {
+    background-color: var(--cor-fundo);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px solid var(--cor-borda);
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.detail-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.label { font-size: 0.85rem; color: var(--cor-texto); opacity: 0.7; }
+.value { font-size: 1.1rem; font-weight: bold; color: var(--cor-titulo); font-family: monospace; }
+
+.btn-copy-small {
+    background: none;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-destaque);
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-copy-small:hover {
+    background-color: var(--cor-destaque);
+    color: white;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px dashed var(--cor-borda);
+    margin: 10px 0;
+}
+
+.copy-success {
+    color: #4cd137;
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .dream-grid {
+        grid-template-columns: 1fr; /* Empilha no celular */
+    }
+    .hero-institute { padding-top: 100px; }
+    .hero-content h1 { font-size: 2rem; }
+    
+    .detail-row {
+        flex-direction: row; /* Mantém lado a lado no celular se der */
+        gap: 10px;
+    }
+    .value { font-size: 0.9rem; } /* Diminui a fonte do PIX no celular pra caber */
+}

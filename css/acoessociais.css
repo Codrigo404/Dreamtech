@@ -1,0 +1,117 @@
+/* --- CSS ESPECÍFICO DA PÁGINA AÇÕES SOCIAIS --- */
+
+.hero-social {
+    background: var(--gradiente-hero), url('https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1000&auto=format&fit=crop') no-repeat center center/cover;
+    background-blend-mode: multiply;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero-content { max-width: 800px; margin: 0 auto; }
+.hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero-content p { font-size: 1.2rem; opacity: 0.9; }
+
+/* SEÇÃO DE OBJETIVOS */
+.objectives-section {
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: var(--cor-texto);
+    opacity: 0.9;
+}
+
+.objectives-list {
+    list-style: none; padding: 0; display: flex; flex-direction: column; gap: 20px;
+}
+
+.objectives-list li {
+    background-color: var(--cor-card);
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: 1px solid var(--cor-borda);
+    display: flex; align-items: center; gap: 20px;
+    transition: transform 0.3s, border-color 0.3s;
+    text-align: left;
+}
+
+.objectives-list li:hover {
+    transform: translateX(10px);
+    border-color: var(--cor-destaque);
+}
+
+.objectives-list i {
+    font-size: 1.8rem;
+    color: var(--cor-destaque);
+    min-width: 40px;
+    text-align: center;
+}
+
+.objectives-list span { font-size: 1.1rem; color: var(--cor-texto); }
+.objectives-list strong { color: var(--cor-titulo); }
+
+/* GRID CARDS */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* CTA PIX */
+.cta-donation { margin-top: 80px; margin-bottom: 60px; }
+
+.cta-box {
+    background: var(--gradiente-hero);
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.cta-box h2 { color: white; font-size: 2rem; margin-bottom: 20px; }
+
+/* ESTILO DO PIX */
+.pix-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    border: 2px dashed var(--cor-destaque);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pix-icon { font-size: 2.5rem; color: #32BCAD; margin-bottom: 10px; }
+.pix-container h3 { margin-bottom: 5px; color: white; }
+
+.pix-input-group { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
+
+.pix-input-group input {
+    padding: 12px; border-radius: 8px; border: none; width: 70%;
+    text-align: center; font-size: 1.1rem; font-weight: bold; color: #333; outline: none;
+}
+
+.btn-copy {
+    padding: 10px 20px; background-color: #32BCAD; border: none;
+    border-radius: 8px; color: white; font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+.btn-copy:hover { background-color: #268f84; transform: scale(1.05); }
+
+.msg-success {
+    color: #4cd137; font-size: 0.9rem; margin-top: 10px; font-weight: 600;
+    opacity: 0; transition: opacity 0.3s;
+}
+
+@media (max-width: 768px) {
+    .objectives-list li { flex-direction: column; text-align: center; }
+    .pix-input-group { flex-direction: column; }
+    .pix-input-group input { width: 100%; }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Tech | Ações Sociais</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/acoessociais.css">
+</head>
+<body class="dark-mode">
+
+    <header class="header">
+        <div class="logo">
+            <span>Dream</span>Tech.
+        </div>
+        
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="sobreNos.html">Sobre Nós</a>
+            <a href="instituto.html">Instituto Dream Tech</a>
+            <a href="dreamer.html">Venha Ser Um Dreamer!</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-theme" aria-label="Alternar Tema">☀️</button>
+            <a href="voluntario.html" class="btn-cta">Seja Voluntário</a>
+            <a href="parceiros.html" class="btn-cta">Seja Parceiro</a>
+            <a href="cadastro.html" class="btn-cta">Cadastro Famílias</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-social">
+            <div class="hero-content">
+                <h1>Impacto Social & Comunidade</h1>
+                <p>A tecnologia é nossa ferramenta, mas as pessoas são o nosso foco. Conheça como transformamos realidades além da sala de aula.</p>
+            </div>
+        </section>
+
+        <section class="container">
+             <div class="objectives-section">
+                <h2 class="section-title">Nossos Principais Objetivos</h2>
+                <p class="section-intro">Nossas iniciativas são pautadas em três pilares fundamentais para garantir suporte integral às comunidades que atendemos:</p>
+                
+                <ul class="objectives-list">
+                    <li>
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <span><strong>Campanhas de Arrecadação:</strong> Suporte básico e tecnológico.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-leaf"></i>
+                        <span><strong>Dream Tech Ecológica:</strong> Sustentabilidade e lixo eletrônico.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <span><strong>Apadrinhamento de Alunos:</strong> Financiamento de talentos.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 60px;">Conheça as Iniciativas</h2>
+            <div class="info-grid">
+                
+                <div class="card action-card">
+                    <div class="icon-box"><i class="fa-solid fa-box-open"></i></div>
+                    <h2>📦 Campanhas de Arrecadação</h2>
+                    <p>Organizamos coletas sazonais de alimentos não perecíveis, brinquedos, livros, roupas. A Dreamtech vai aonde o estado não chega!</p>
+                    <a href="cadastro.html" class="link-arrow">Cadastrar Família <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="card action-card">
+                    <div class="icon-box"><i class="fa-solid fa-recycle"></i></div>
+                    <h2>🌱 Dream Tech Ecológica</h2>
+                    <p>Ponto de coleta de lixo eletrônico (celulares, notebooks antigos). Nós recondicionamos o que funciona para uso nas aulas.</p>
+                    <a href="contato.html" class="link-arrow">Pontos de coleta <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="card action-card">
+                    <div class="icon-box"><i class="fa-solid fa-hands-holding-child"></i></div>
+                    <h2>🤝 Apadrinhamento de Alunos</h2>
+                    <p>Programa onde empresas ou pessoas físicas financiam os custos de internet e transporte de um aluno destaque.</p>
+                    <a href="parceiros.html" class="link-arrow">Quero apadrinhar <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="cta-donation container">
+            <div class="cta-box">
+                <h2>Faça Parte Dessa Transformação</h2>
+                <p>Sua contribuição, seja financeira, com equipamentos ou tempo, muda diretamente a vida de um jovem.</p>
+                
+                <div class="pix-container">
+                    <i class="fa-brands fa-pix pix-icon"></i>
+                    <h3>Doe via PIX</h3>
+                    <p>Chave Celular:</p>
+                    
+                    <div class="pix-input-group">
+                        <input type="text" value="21999614345" id="pixKey" readonly>
+                        <button onclick="copiarPix()" class="btn-copy">
+                            <i class="fa-regular fa-copy"></i> Copiar
+                        </button>
+                    </div>
+                    <p id="msg-copiado" class="msg-success">Chave copiada! ✅</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Iniciativa Dream Tech. Todos os direitos reservados.</p>
+        <div class="footer-social">
+            <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/5521999614345" target="_blank" class="social-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script src="JS/index.js"></script>
+
+    <script>
+        function copiarPix() {
+            const chavePix = document.getElementById("pixKey");
+            chavePix.select();
+            chavePix.setSelectionRange(0, 99999); // Para mobile
+            navigator.clipboard.writeText(chavePix.value).then(() => {
+                const msg = document.getElementById("msg-copiado");
+                msg.style.opacity = "1";
+                setTimeout(() => { msg.style.opacity = "0"; }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Tech | Contato</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contato.css">
+</head>
+<body class="dark-mode">
+
+    <header class="header">
+        <div class="logo">
+            <span>Dream</span>Tech.
+        </div>
+        
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="sobreNos.html">Sobre Nós</a>
+            <a href="acoesSociais.html">Ações Sociais</a>
+            <a href="instituto.html">Instituto</a>
+            <a href="dreamer.html">Venha Ser Um Dreamer!</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-theme">☀️</button>
+            <a href="#" class="btn-cta">Login Aluno</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-contact">
+            <h1>Fale Conosco</h1>
+            <p>Precisa de ajuda? Quer ser um Parceiro Dreamer? Entre em contato conosco!</p>
+        </section>
+
+        <section class="container contact-wrapper">
+            
+            <div class="contact-info">
+                <h2>Canais de Atendimento</h2>
+                <p>Nossa equipe está pronta para te atender.</p>
+
+                <a href="https://wa.me/5521999614345" target="_blank" class="info-card">
+                    <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="info-text">
+                        <h3>WhatsApp</h3>
+                        <span>(21) 99961-4345</span>
+                        <small>Clique para conversar</small>
+                    </div>
+                </a>
+
+                <a href="mailto:rodrigogago@souunisuam.com.br" class="info-card">
+                    <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h3>E-mail</h3>
+                        <span>rodrigogago@souunisuam.com.br</span>
+                        <small>Envie sua mensagem</small>
+                    </div>
+                </a>
+
+                <div class="info-card no-hover">
+                    <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="info-text">
+                        <h3>Localização</h3>
+                        <span>Rio de Janeiro, RJ</span>
+                        <small>Atendimento Online e Presencial</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <form class="form-box" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! (Simulação)');">
+                    <h2>Envie uma Mensagem</h2>
+                    
+                    <div class="input-group">
+                        <label>Seu Nome</label>
+                        <input type="text" placeholder="Ex: Rodrigo Gago" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Seu E-mail</label>
+                        <input type="email" placeholder="exemplo@email.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Assunto</label>
+                        <select>
+                            <option>Dúvida sobre Cursos</option>
+                            <option>Parceria / Apoio</option>
+                            <option>Ser Voluntário</option>
+                            <option>Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Mensagem</label>
+                        <textarea rows="5" placeholder="Escreva aqui como podemos ajudar..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        Enviar Mensagem <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Iniciativa Dream Tech. Todos os direitos reservados.</p>
+        <div class="footer-social">
+            <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/5521999614345" target="_blank" class="social-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script src="JS/index.js"></script>
+</body>
+</html>

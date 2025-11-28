@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Tech | Área do Investidor</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/parceiro.css"> </head>
+<body class="dark-mode corp-mode">
+
+    <header class="header">
+        <div class="logo"><span>Dream</span>Tech.</div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="sobreNos.html">Sobre Nós</a>
+            <a href="acoesSociais.html">Ações Sociais</a>
+            <a href="instituto.html">Instituto</a>
+            <a href="parceiros.html" class="active">Seja Parceiro</a>
+        </nav>
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-theme">☀️</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-partner">
+            <div class="hero-overlay">
+                <h1>Invista no Futuro</h1>
+                <p>Conecte sua marca à inovação social. Cadastre sua empresa e torne-se um pilar do Instituto Dream Tech.</p>
+            </div>
+        </section>
+
+        <section class="container form-wrapper">
+            
+            <form id="partnerForm" autocomplete="off" class="corp-form">
+                
+                <input type="hidden" id="idParceiro">
+
+                <div class="form-section-header">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h2>Dados Empresariais</h2>
+                </div>
+
+                <div class="input-grid">
+                    <div class="input-box full-width">
+                        <label>Razão Social / Nome da Empresa</label>
+                        <input type="text" id="razaoSocial" required placeholder="Ex: Dream Tech Soluções LTDA">
+                    </div>
+                    
+                    <div class="input-box">
+                        <label>CNPJ</label>
+                        <input type="text" id="cnpj" required placeholder="00.000.000/0001-00" maxlength="18">
+                    </div>
+
+                    <div class="input-box">
+                        <label>Segmento de Atuação</label>
+                        <select id="segmento">
+                            <option value="">Selecione...</option>
+                            <option value="Tecnologia">Tecnologia</option>
+                            <option value="Educacao">Educação</option>
+                            <option value="Varejo">Varejo / Comércio</option>
+                            <option value="Servicos">Serviços</option>
+                            <option value="Industria">Indústria</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section-header">
+                    <i class="fa-solid fa-map-location"></i>
+                    <h2>Localização Corporativa</h2>
+                </div>
+
+                <div class="input-grid">
+                    <div class="input-box">
+                        <label>CEP</label>
+                        <input type="text" id="cep" placeholder="00000-000" maxlength="9">
+                    </div>
+                    <div class="input-box full-width">
+                        <label>Endereço Comercial</label>
+                        <input type="text" id="endereco" required placeholder="Av. Empresarial, 1000 - Torre A">
+                    </div>
+                </div>
+
+                <div class="form-section-header">
+                    <i class="fa-solid fa-handshake-simple"></i>
+                    <h2>Contato & Parceria</h2>
+                </div>
+
+                <div class="input-grid">
+                    <div class="input-box">
+                        <label>Nome do Representante</label>
+                        <input type="text" id="representante" required placeholder="Quem fala pela empresa?">
+                    </div>
+                    <div class="input-box">
+                        <label>Telefone / WhatsApp Corporativo</label>
+                        <input type="tel" id="telefone" required placeholder="(21) 99999-9999" maxlength="15">
+                    </div>
+                    <div class="input-box full-width">
+                        <label>Proposta de Valor / Mensagem</label>
+                        <textarea id="proposta" rows="3" placeholder="Como sua empresa deseja apoiar o Dream Tech? (Aporte financeiro, equipamentos, mentoria...)"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" id="btnSalvar" class="btn-gold">Enviar Proposta de Parceria</button>
+                    <button type="button" id="btnCancelar" class="btn-outline" style="display: none;" onclick="cancelarEdicao()">Cancelar</button>
+                </div>
+
+            </form>
+
+            <div class="partners-list">
+                <h3><i class="fa-solid fa-briefcase"></i> Empresas Interessadas</h3>
+                <div class="table-responsive">
+                    <table class="corp-table">
+                        <thead>
+                            <tr>
+                                <th>Empresa</th>
+                                <th>CNPJ</th>
+                                <th>Segmento</th>
+                                <th>Representante</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaCorpo">
+                            </tbody>
+                    </table>
+                    <p id="msgVazio" class="empty-msg">Nenhum parceiro registrado.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Iniciativa Dream Tech. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="JS/index.js"></script>
+
+    <script>
+    (function () {
+        const KEY_DB = 'dreamtech_db_parceiros';
+        
+        // --- 1. MÁSCARAS ESPECIAIS (CNPJ) ---
+        
+        const mascaraCNPJ = (v) => {
+            return v
+                .replace(/\D/g, '')
+                .replace(/^(\d{2})(\d)/, '$1.$2')
+                .replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3')
+                .replace(/\.(\d{3})(\d)/, '.$1/$2')
+                .replace(/(\d{4})(\d)/, '$1-$2')
+                .replace(/(-\d{2})\d+?$/, '$1'); // Limita ao formato padrão
+        }
+
+        const mascaraTel = (v) => v.replace(/\D/g, '').replace(/(\d{2})(\d)/, '($1) $2').replace(/(\d{5})(\d)/, '$1-$2').replace(/(-\d{4})\d+?$/, '$1');
+        const mascaraCEP = (v) => v.replace(/\D/g, '').replace(/^(\d{5})(\d)/, '$1-$2').replace(/(-\d{3})\d+?$/, '$1');
+
+        // Aplicando máscaras
+        document.getElementById('cnpj').addEventListener('input', e => e.target.value = mascaraCNPJ(e.target.value));
+        document.getElementById('telefone').addEventListener('input', e => e.target.value = mascaraTel(e.target.value));
+        
+        const inputCep = document.getElementById('cep');
+        inputCep.addEventListener('input', e => {
+            let valor = e.target.value;
+            e.target.value = mascaraCEP(valor);
+            if(valor.length === 9) buscarEndereco(valor);
+        });
+
+        // --- 2. BUSCA VIA CEP ---
+        function buscarEndereco(cep) {
+            const campoEnd = document.getElementById('endereco');
+            const cleanCep = cep.replace(/\D/g, '');
+            if(cleanCep.length === 8) {
+                campoEnd.value = "Consultando base de dados...";
+                fetch(`https://viacep.com.br/ws/${cleanCep}/json/`)
+                    .then(r => r.json())
+                    .then(d => {
+                        if(!d.erro) campoEnd.value = `${d.logradouro}, ${d.bairro} - ${d.localidade}/${d.uf}`;
+                        else { alert('CEP Inválido'); campoEnd.value = ''; }
+                    });
+            }
+        }
+
+        // --- 3. CRUD (Gerenciamento) ---
+        const lerBD = () => JSON.parse(localStorage.getItem(KEY_DB)) ?? [];
+        const setBD = (db) => localStorage.setItem(KEY_DB, JSON.stringify(db));
+
+        const salvarParceiro = (e) => {
+            e.preventDefault();
+            const parceiro = {
+                id: document.getElementById('idParceiro').value || new Date().getTime().toString(),
+                razao: document.getElementById('razaoSocial').value,
+                cnpj: document.getElementById('cnpj').value,
+                segmento: document.getElementById('segmento').value,
+                cep: document.getElementById('cep').value,
+                endereco: document.getElementById('endereco').value,
+                representante: document.getElementById('representante').value,
+                telefone: document.getElementById('telefone').value,
+                proposta: document.getElementById('proposta').value
+            };
+
+            const db = lerBD();
+            const index = db.findIndex(p => p.id == parceiro.id);
+
+            if(index == -1) {
+                db.push(parceiro);
+                alert("Proposta enviada com sucesso! Em breve entraremos em contato. 🤝");
+            } else {
+                db[index] = parceiro;
+                alert("Dados do parceiro atualizados.");
+            }
+
+            setBD(db);
+            limpar();
+            listar();
+        };
+
+        const listar = () => {
+            const db = lerBD();
+            const tbody = document.getElementById('tabelaCorpo');
+            tbody.innerHTML = '';
+            
+            if(db.length === 0) {
+                document.getElementById('msgVazio').style.display = 'block';
+            } else {
+                document.getElementById('msgVazio').style.display = 'none';
+                db.forEach(p => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td><strong>${p.razao}</strong></td>
+                        <td>${p.cnpj}</td>
+                        <td><span class="badge-seg">${p.segmento}</span></td>
+                        <td>${p.representante}</td>
+                        <td>
+                            <button onclick="editar('${p.id}')" class="btn-icon edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button onclick="excluir('${p.id}')" class="btn-icon delete"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+        };
+
+        const limpar = () => {
+            document.getElementById('partnerForm').reset();
+            document.getElementById('idParceiro').value = '';
+            document.getElementById('btnSalvar').innerText = "Enviar Proposta de Parceria";
+            document.getElementById('btnCancelar').style.display = 'none';
+        }
+
+        // Funções Globais
+        window.editar = (id) => {
+            const p = lerBD().find(x => x.id == id);
+            if(p) {
+                document.getElementById('idParceiro').value = p.id;
+                document.getElementById('razaoSocial').value = p.razao;
+                document.getElementById('cnpj').value = p.cnpj;
+                document.getElementById('segmento').value = p.segmento;
+                document.getElementById('cep').value = p.cep;
+                document.getElementById('endereco').value = p.endereco;
+                document.getElementById('representante').value = p.representante;
+                document.getElementById('telefone').value = p.telefone;
+                document.getElementById('proposta').value = p.proposta;
+
+                document.getElementById('btnSalvar').innerText = "Atualizar Dados";
+                document.getElementById('btnCancelar').style.display = 'inline-block';
+                document.querySelector('.corp-form').scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+
+        window.excluir = (id) => {
+            if(confirm("Remover este parceiro da lista?")) {
+                const db = lerBD().filter(x => x.id != id);
+                setBD(db);
+                listar();
+            }
+        };
+
+        window.cancelarEdicao = limpar;
+
+        document.getElementById('partnerForm').addEventListener('submit', salvarParceiro);
+        listar();
+
+    })();
+    </script>
+</body>
+</html>
