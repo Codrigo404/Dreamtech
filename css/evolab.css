@@ -1,0 +1,198 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS - MODO EVOLAB
+   ========================================== */
+:root {
+    --neon-green: #ff4747; /* Vermelho Coral Evolab */
+    --bg-dark: #050505;
+    --card-bg: #111;
+    --border-soft: rgba(255, 255, 255, 0.05);
+    --font-main: 'Poppins', sans-serif;
+    --font-code: 'Courier Prime', monospace;
+}
+
+.evolab-mode {
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+}
+
+.container-evolab {
+    padding: 20px;
+}
+
+/* HEADER */
+.header-evolab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.logo-evolab {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.logo-evolab span {
+    color: var(--neon-green);
+    text-shadow: 0 0 15px var(--neon-green);
+}
+
+/* ==========================================
+   BENTO GRID RESPONSIVO
+   ========================================== */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bento-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 24px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bento-item:hover {
+    border-color: var(--neon-green);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 71, 71, 0.1);
+}
+
+/* ESTILOS ESPECÍFICOS DOS CARDS */
+.item-logo-main { grid-column: span 2; grid-row: span 2; display: flex; align-items: center; justify-content: center; background: #000; padding: 0; }
+.img-evolab-logo { width: 100%; height: 100%; object-fit: contain; padding: 40px; }
+
+.item-hero-text { grid-column: span 2; }
+.item-hero-text h2 { font-size: 2.2rem; line-height: 1.2; font-weight: 800; }
+
+.item-tech-stack { grid-column: span 1; }
+.item-impacto { grid-column: span 1; } /* Equity Card */
+.item-pacto-social { grid-column: span 2; }
+.item-biocode, .item-safem { grid-column: span 1; }
+.item-cta-evolab { grid-column: span 2; display: flex; flex-direction: column; justify-content: center; }
+
+/* TEXTOS E STATUS */
+.status-code {
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    color: var(--neon-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+h3 { font-size: 1.4rem; margin-bottom: 10px; font-weight: 700; }
+p { color: #aaa; font-size: 0.95rem; line-height: 1.6; }
+
+/* ==========================================
+   FOOTER PROFISSIONAL
+   ========================================== */
+.footer-evolab {
+    background: #030303;
+    border-top: 1px solid var(--border-soft);
+    padding: 80px 20px 40px;
+    margin-top: 80px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 60px;
+}
+
+.footer-brand p { margin: 20px 0; max-width: 300px; }
+
+.social-links { display: flex; gap: 20px; }
+.social-links a { color: #fff; font-size: 1.3rem; transition: 0.3s; }
+.social-links a:hover { color: var(--neon-green); transform: translateY(-3px); }
+
+.footer-links h4, .footer-contact h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--neon-green);
+    margin-bottom: 25px;
+}
+
+.footer-links ul { list-style: none; padding: 0; }
+.footer-links ul li { margin-bottom: 12px; }
+.footer-links ul li a { color: #888; text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
+.footer-links ul li a:hover { color: #fff; padding-left: 5px; }
+
+.footer-contact p { color: #888; font-size: 0.9rem; margin-bottom: 15px; }
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-soft);
+    text-align: center;
+    color: #444;
+    font-size: 0.8rem;
+}
+
+/* ==========================================
+   BOTÕES E UI
+   ========================================== */
+.btn-evolab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green) !important;
+    border-radius: 4px;
+    font-family: var(--font-code);
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-evolab:hover {
+    background: var(--neon-green);
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 71, 71, 0.4);
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+   ========================================== */
+@media (max-width: 1100px) {
+    .footer-content { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 900px) {
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+    .item-logo-main, .item-hero-text, .item-pacto-social, .item-cta-evolab { grid-column: span 2; }
+}
+
+@media (max-width: 600px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .item-logo-main, .item-hero-text, .item-pacto-social, .item-cta-evolab, .item-impacto { grid-column: span 1; }
+    
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .footer-brand p { margin: 20px auto; }
+    .social-links { justify-content: center; }
+    
+    .header-evolab { flex-direction: column; gap: 20px; }
+    .item-hero-text h2 { font-size: 1.8rem; }
+}

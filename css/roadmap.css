@@ -1,0 +1,303 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================== */
+:root {
+    --neon-blue: #00d4ff;
+    --neon-blue-glow: rgba(0, 212, 255, 0.4);
+    --bg-dark: #050a15; 
+    --card-dark: #0d1626;
+    --text-muted: #a0aec0;
+    --font-main: 'Poppins', sans-serif;
+    --font-code: 'Courier Prime', monospace;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-top: 80px; /* Espaço para a navbar fixa */
+}
+
+/* ==========================================
+   NAVBAR RESPONSIVA (GLASSMORPHISM)
+   ========================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(5, 10, 21, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    z-index: 1000;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue-glow);
+}
+
+/* ==========================================
+   ROADMAP STRUCTURE
+   ========================================== */
+.roadmap-section {
+    padding: 60px 5%;
+}
+
+.roadmap-container {
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.roadmap-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 5vw, 3rem); /* Fonte fluida */
+    font-weight: 800;
+}
+
+.roadmap-title span {
+    color: var(--neon-blue);
+    text-shadow: 0 0 15px var(--neon-blue-glow);
+}
+
+/* LINHA DO TEMPO */
+.timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #1a2a44;
+}
+
+.line-progress {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 2px;
+    height: 0%;
+    background: var(--neon-blue);
+    box-shadow: 0 0 20px var(--neon-blue);
+    z-index: 1;
+    transition: height 0.4s ease-out;
+}
+
+/* CARDS */
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 50px;
+    opacity: 0.1;
+    transform: translateY(20px);
+    transition: all 0.7s ease;
+}
+
+.timeline-item.reached {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dot {
+    position: absolute;
+    left: 11px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: var(--bg-dark);
+    border: 2px solid #1a2a44;
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+}
+
+.reached .dot {
+    background: var(--neon-blue);
+    border-color: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.content {
+    background: var(--card-dark);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    transition: 0.3s ease;
+}
+
+.card-link:hover .content {
+    border-color: var(--neon-blue);
+    background: rgba(0, 212, 255, 0.05);
+    transform: scale(1.02);
+}
+
+.year {
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    color: var(--neon-blue);
+}
+
+.sub-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #4db8ff;
+    font-weight: 700;
+}
+
+.content h3 {
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+.content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* PULSE EFFECT */
+.pulse {
+    animation: blue-pulse 2s infinite;
+}
+
+@keyframes blue-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); }
+    70% { box-shadow: 0 0 0 12px rgba(0, 212, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+}
+
+.status-box {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 5px 12px;
+    border: 1px dashed var(--neon-blue);
+    color: var(--neon-blue);
+    font-size: 0.7rem;
+    font-family: var(--font-code);
+}
+
+/* ==========================================
+   DESTAQUE NEON (JOVENS CIENTISTAS)
+   ========================================== */
+.timeline-item.jovens-cientistas-highlight.reached .content {
+    border: 1px solid var(--neon-blue) !important;
+    background: rgba(0, 212, 255, 0.1) !important;
+    box-shadow: 
+        0 0 10px var(--neon-blue),
+        0 0 20px var(--neon-blue-glow),
+        inset 0 0 10px var(--neon-blue-glow) !important;
+    animation: neon-flicker 1.5s infinite alternate !important;
+}
+
+@keyframes neon-flicker {
+    0% { 
+        box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue-glow);
+        border-color: rgba(0, 212, 255, 0.5);
+    }
+    100% { 
+        box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue-glow);
+        border-color: var(--neon-blue);
+    }
+}
+
+/* ==========================================
+   RESPONSIVIDADE (MOBILE FIRST)
+   ========================================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 15px 2%;
+    }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px; /* Mais espaço para navbar quebrada em 2 linhas */
+    }
+
+    .navbar {
+        flex-wrap: wrap; /* Faz os links pularem linha se necessário */
+        gap: 10px;
+    }
+
+    .navbar a {
+        margin: 0 8px;
+        font-size: 0.7rem;
+    }
+
+    .timeline::before, .line-progress {
+        left: 15px; /* Move a linha para a esquerda */
+    }
+
+    .dot {
+        left: 6px;
+    }
+
+    .timeline-item {
+        padding-left: 40px; /* Reduz o recuo do card */
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .content h3 {
+        font-size: 1.1rem;
+    }
+
+    .roadmap-title {
+        margin-bottom: 40px;
+    }
+}
+
+/* Celulares Pequenos */
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 0.65rem;
+        margin: 0 5px;
+    }
+    
+    .year {
+        font-size: 0.75rem;
+    }
+}
