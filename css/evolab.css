@@ -81,7 +81,7 @@
 
 .item-tech-stack { grid-column: span 1; }
 .item-impacto { grid-column: span 1; } /* Equity Card */
-.item-pacto-social { grid-column: span 2; }
+.item-pacto-social { grid-column: span 1; }
 .item-biocode, .item-safem { grid-column: span 1; }
 .item-cta-evolab { grid-column: span 2; display: flex; flex-direction: column; justify-content: center; }
 
