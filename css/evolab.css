@@ -45,7 +45,7 @@
 }
 
 /* ==========================================
-   BENTO GRID RESPONSIVO
+   BENTO GRID RESPONSIVO (4 COLUNAS BASE)
    ========================================== */
 .bento-grid {
     display: grid;
@@ -64,6 +64,7 @@
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex; flex-direction: column; justify-content: space-between;
 }
 
 .bento-item:hover {
@@ -72,7 +73,7 @@
     box-shadow: 0 10px 30px rgba(255, 71, 71, 0.1);
 }
 
-/* ESTILOS ESPECÍFICOS DOS CARDS */
+/* ESTILOS ESPECÍFICOS E SPANS DOS CARDS */
 .item-logo-main { grid-column: span 2; grid-row: span 2; display: flex; align-items: center; justify-content: center; background: #000; padding: 0; }
 .img-evolab-logo { width: 100%; height: 100%; object-fit: contain; padding: 40px; }
 
@@ -81,11 +82,18 @@
 
 .item-tech-stack { grid-column: span 1; }
 .item-impacto { grid-column: span 1; } /* Equity Card */
+
+/* CARRO-CHEFE DESTAQUE (2 COLUNAS NO DESKTOP) */
+.item-cybertech-main { grid-column: span 2; }
+
+/* PROJETOS MENORES (1 COLUNA CADA) */
+.item-biocode { grid-column: span 1; }
+.item-Re-plant { grid-column: span 1; }
+
 .item-pacto-social { grid-column: span 2; }
-.item-biocode, .item-safem { grid-column: span 1; }
 .item-cta-evolab { grid-column: span 2; display: flex; flex-direction: column; justify-content: center; }
 
-/* TEXTOS E STATUS */
+/* TEXTOS E STATUS (CORRIGIDO) */
 .status-code {
     font-family: var(--font-code);
     font-size: 0.7rem;
@@ -165,6 +173,7 @@ p { color: #aaa; font-size: 0.95rem; line-height: 1.6; }
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.3s;
+    box-sizing: border-box
 }
 
 .btn-evolab:hover {
@@ -174,7 +183,7 @@ p { color: #aaa; font-size: 0.95rem; line-height: 1.6; }
 }
 
 /* ==========================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE COMPLETA (BREAKPOINTS)
    ========================================== */
 @media (max-width: 1100px) {
     .footer-content { grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -182,12 +191,42 @@ p { color: #aaa; font-size: 0.95rem; line-height: 1.6; }
 
 @media (max-width: 900px) {
     .bento-grid { grid-template-columns: repeat(2, 1fr); }
-    .item-logo-main, .item-hero-text, .item-pacto-social, .item-cta-evolab { grid-column: span 2; }
+    
+    /* Em tablets, os cards de 2 colunas mantêm span 2, e os de 1 coluna viram span 1 */
+    .item-logo-main, 
+    .item-hero-text, 
+    .item-cybertech-main, 
+    .item-pacto-social, 
+    .item-cta-evolab { 
+        grid-column: span 2; 
+    }
+    
+    .item-tech-stack, 
+    .item-impacto, 
+    .item-biocode, 
+    .item-Re-plant { 
+        grid-column: span 1; 
+    }
 }
 
 @media (max-width: 600px) {
     .bento-grid { grid-template-columns: 1fr; }
-    .item-logo-main, .item-hero-text, .item-pacto-social, .item-cta-evolab, .item-impacto { grid-column: span 1; }
+    
+    /* No telemóvel, TODOS os cards passam a ocupar 1 coluna única */
+    .item-logo-main, 
+    .item-hero-text, 
+    .item-tech-stack, 
+    .item-impacto, 
+    .item-cybertech-main, 
+    .item-biocode, 
+    .item-Re-plant, 
+    .item-pacto-social, 
+    .item-cta-evolab { 
+        grid-column: span 1; 
+        grid-row: auto; /* Desfaz o span de linha do logo para não esticar no mobile */
+    }
+    
+    .img-evolab-logo { padding: 20px; }
     
     .footer-content { grid-template-columns: 1fr; text-align: center; }
     .footer-brand p { margin: 20px auto; }
