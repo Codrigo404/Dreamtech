@@ -1,0 +1,245 @@
+/* ==========================================================================
+   ESTILOS DA PÁGINA DREAMER (ORIGINAIS PRESERVADOS)
+   ========================================================================== */
+
+/* Hero */
+.hero-dreamer {
+    background: var(--gradiente-hero);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+.hero-content h1 { font-size: 2.8rem; margin-bottom: 15px; }
+.hero-content p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+
+/* --- SEÇÃO DIVIDIDA (CARDS) --- */
+.roles-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 40px;
+    margin-top: -40px; /* Sobe um pouco pra ficar em cima do Hero */
+    position: relative;
+    z-index: 2;
+}
+
+.role-card {
+    background-color: var(--cor-card);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.role-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Header do Card (Parte colorida de cima) */
+.role-header {
+    padding: 40px 30px;
+    text-align: center;
+    color: white;
+}
+
+.business .role-header { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+.individual .role-header { background: linear-gradient(135deg, #00b4db, #0083b0); }
+
+.role-icon { font-size: 3rem; margin-bottom: 15px; }
+.role-header h2 { font-size: 1.8rem; margin-bottom: 5px; }
+.role-header p { opacity: 0.9; font-size: 0.9rem; }
+
+/* Corpo do Card */
+.role-body {
+    padding: 30px;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.role-body p {
+    color: var(--cor-texto);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Lista de Benefícios */
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.benefits-list li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.business .benefits-list i { color: #FFD700; margin-top: 5px; } 
+.individual .benefits-list i { color: #00d4ff; margin-top: 5px; } 
+
+.benefits-list span {
+    font-size: 0.95rem;
+    color: var(--cor-texto);
+}
+
+/* Botões */
+.btn-role {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-business {
+    background-color: transparent;
+    border: 2px solid #2a5298;
+    color: #2a5298;
+}
+body.dark-mode .btn-business { color: #8faae8; border-color: #8faae8; }
+
+.btn-business:hover { background-color: #2a5298; color: white; }
+
+.btn-individual {
+    background-color: transparent;
+    border: 2px solid #0083b0;
+    color: #0083b0;
+}
+body.dark-mode .btn-individual { color: #00d4ff; border-color: #00d4ff; }
+
+.btn-individual:hover { background-color: #0083b0; color: white; }
+
+
+/* --- FORMULÁRIO FINAL --- */
+.join-form-section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: var(--cor-fundo);
+}
+
+.join-form-section h2 { color: var(--cor-titulo); margin-bottom: 10px; }
+.join-form-section p { color: var(--cor-texto); margin-bottom: 30px; }
+
+.simple-form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.simple-form input, 
+.simple-form select {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+    outline: none;
+}
+
+.simple-form button {
+    padding: 12px 30px;
+    background-color: var(--cor-destaque);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.simple-form button:hover { background-color: #0056b3; }
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE) - PADRÃO DREAMTECH
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* HEADER: Estático no topo para não tapar os cards */
+    .header {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 20px 15px !important;
+        position: relative !important; 
+        text-align: center !important;
+        background: #020617 !important;
+    }
+
+    /* NAVBAR: Estilo padrão com botões azuis */
+    .navbar {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 10px !important;
+        margin: 15px 0 !important;
+    }
+
+    .navbar a {
+        display: block !important;
+        padding: 12px !important;
+        border: 1px solid rgba(0, 210, 255, 0.2) !important;
+        border-radius: 8px !important;
+        color: var(--cor-destaque) !important;
+        font-size: 1rem !important;
+    }
+
+    /* CARDS: Um embaixo do outro e ajuste de palavras */
+    .roles-container {
+        grid-template-columns: 1fr !important;
+        margin-top: 20px !important; /* Remove o negativo para não encavalar no texto */
+        padding: 0 15px !important;
+        gap: 25px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem !important; /* Ajuste para caber sem quebrar */
+        word-wrap: break-word !important;
+    }
+
+    .role-header {
+        padding: 30px 20px !important;
+    }
+
+    .role-header h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Ajuste do Formulário no celular */
+    .simple-form {
+        flex-direction: column !important;
+        padding: 0 10px !important;
+    }
+
+    .simple-form input, 
+    .simple-form select,
+    .simple-form button {
+        width: 100% !important;
+        margin-bottom: 5px !important;
+    }
+
+    .header-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 10px !important;
+    }
+
+    .btn-cta {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 15px !important;
+    }
+}

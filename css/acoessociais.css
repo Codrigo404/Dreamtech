@@ -1,0 +1,403 @@
+/* ==========================================================================
+   ESTILOS ORIGINAIS PRESERVADOS (PC)
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- VARIÁVEIS E TEMA --- */
+:root {
+    --cor-destaque: #00d2ff;
+    --cor-card: rgba(255, 255, 255, 0.03);
+    --cor-borda: rgba(255, 255, 255, 0.1);
+    --cor-texto: #ccc;
+    --cor-titulo: #fff;
+    --gradiente-hero: linear-gradient(135deg, rgba(5, 10, 24, 0.95), rgba(0, 210, 255, 0.4));
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #020617;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- HEADER ORIGINAL --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(2, 6, 23, 0.95);
+    border-bottom: 1px solid var(--cor-borda);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--cor-titulo);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--cor-destaque);
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: var(--cor-titulo);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--cor-destaque);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-theme {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.btn-cta {
+    background: var(--cor-destaque);
+    color: #000;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+/* --- HERO SECTION --- */
+.hero-social {
+    background: var(--gradiente-hero), url('https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1000&auto=format&fit=crop') no-repeat center center / cover;
+    background-blend-mode: multiply;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 20px; 
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-content p { 
+    font-size: 1.2rem; 
+    opacity: 0.9; 
+}
+
+/* --- OBJETIVOS --- */
+.objectives-section { 
+    margin: 60px auto; 
+    max-width: 900px; 
+}
+
+.objectives-list { 
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.objectives-list li {
+    padding: 15px 25px;
+    border-left: 4px solid var(--cor-destaque);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.3s;
+}
+
+.objectives-list li:hover {
+    background: rgba(0, 210, 255, 0.05);
+    transform: translateX(10px);
+}
+
+.objectives-list i { 
+    font-size: 1.6rem; 
+    color: var(--cor-destaque); 
+    min-width: 40px; 
+}
+
+/* --- GRID DE CARDS --- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.action-card {
+    background: #0f172a;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid var(--cor-borda);
+    transition: 0.4s;
+    height: 100%;
+}
+
+.action-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--cor-destaque);
+}
+
+.icon-box { 
+    font-size: 2.8rem; 
+    color: var(--cor-destaque); 
+    margin-bottom: 25px; 
+}
+
+/* --- ÚLTIMA AÇÃO --- */
+.real-impact { 
+    margin: 100px 0; 
+    text-align: center; 
+}
+
+.impact-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    background: var(--cor-card);
+    padding: 60px 40px;
+    border-radius: 30px;
+    border: 1px solid var(--cor-borda);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.photo-frame { 
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    justify-content: center;
+}
+
+.photo-frame img { 
+    width: 100%; 
+    height: auto;
+    border-radius: 20px; 
+    border: 2px solid var(--cor-destaque); 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.impact-text { 
+    max-width: 750px;
+    text-align: center;
+}
+
+.impact-text h3 {
+    color: var(--cor-destaque);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.impact-text p {
+    color: var(--cor-texto);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* --- CTA PIX --- */
+.cta-box {
+    background: #050a18;
+    border: 1px solid var(--cor-borda);
+    border-radius: 40px;
+    padding: 60px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 60px auto;
+    max-width: 1100px;
+}
+
+.badge { 
+    background: rgba(0, 210, 255, 0.1); 
+    color: var(--cor-destaque); 
+    padding: 5px 15px; 
+    border-radius: 20px; 
+    font-weight: bold; 
+    font-size: 0.8rem; 
+}
+
+.pix-card {
+    background: rgba(255,255,255,0.03);
+    padding: 35px;
+    border-radius: 24px;
+    border: 1px solid var(--cor-borda);
+    flex: 1;
+    min-width: 320px;
+}
+
+.pix-logo { 
+    background: #32BCAD; 
+    width: 45px; 
+    height: 45px; 
+    border-radius: 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1.4rem; 
+    margin-bottom: 20px; 
+}
+
+.pix-input-group { 
+    background: #000; 
+    display: flex; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    margin: 15px 0; 
+    border: 1px solid #333; 
+}
+
+.pix-input-group input { 
+    background: transparent; 
+    border: none; 
+    color: #fff; 
+    padding: 15px; 
+    flex: 1; 
+    font-family: monospace; 
+    outline: none; 
+}
+
+.btn-copy { 
+    background: #32BCAD; 
+    border: none; 
+    padding: 0 20px; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+/* --- FOOTER --- */
+.footer-main { 
+    background: #020617; 
+    padding: 80px 20px 40px; 
+    border-top: 1px solid var(--cor-borda); 
+}
+
+.footer-grid { 
+    display: flex; 
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    gap: 40px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.footer-social .social-icon { 
+    font-size: 2rem; 
+    color: #fff; 
+    margin-left: 20px; 
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (A MARRETA TÉCNICA PARA CORREÇÃO)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* CORREÇÃO DO HEADER: Para de ser "parede" (sticky) e sobe com o scroll */
+    .header {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 20px 15px !important;
+        text-align: center !important;
+        position: relative !important; /* ISSO FAZ O MENU SUBIR E NÃO TAPAR TUDO */
+    }
+
+    .navbar {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 12px !important;
+        margin: 20px 0 !important;
+    }
+
+    .navbar a {
+        display: block !important;
+        padding: 12px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        font-size: 1.1rem !important;
+    }
+
+    .header-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 12px !important;
+    }
+
+    .btn-cta {
+        display: block !important;
+        width: 100% !important;
+        padding: 15px !important;
+        text-align: center !important;
+    }
+
+    /* CORREÇÃO DA IMAGEM E CONTEÚDO */
+    .photo-frame img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .impact-gallery {
+        padding: 25px 15px !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    /* CORREÇÃO DO PIX E TEXTOS CORTADOS */
+    .cta-box {
+        flex-direction: column !important;
+        padding: 40px 20px !important;
+        text-align: center !important;
+    }
+
+    .pix-card {
+        width: 100% !important;
+        min-width: unset !important;
+    }
+
+    .pix-input-group {
+        flex-direction: column !important;
+    }
+
+    .btn-copy {
+        width: 100% !important;
+        padding: 15px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+}
